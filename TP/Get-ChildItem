@@ -1,0 +1,45 @@
+#!/usr/bin/php
+<?php
+//****************************************************************
+//
+//		Autor		: 	BOUDI Ludovic
+//		Date		:	01-11-2016
+//		Description :	portage de la commande PowerShell 
+//						Get-ChildItem pour linux
+//
+//****************************************************************
+
+// Description de la commande originelle
+// La commande "Get-ChildItem" (Ou en abrege GCI) vous permet de
+// lister le contenu d’un repertoire comme le ferait la commande
+// "Dir" sous DOS ou encore "ls" sous Linux
+
+// définition d'une commande d'aide en ligne
+function usage()
+{
+	echo "La commande Get-ChildItem affiche le contenu d'un repertoire. \n";
+	echo "\t - si elle est passee sans parametre, elle affiche le contenu du repertoire courant \n";
+	echo "\t - sinon elle affiche le contenu du chemin passé en parametre \n";
+	echo "Note : cette commande ne peut prendre qu'un seul parametre !!! \n"
+}
+
+var $output;
+var $cmd;
+
+// debut du script
+if ($argc == 1)
+{
+	$output = shell_exec('ls -liart');
+	echo $output;
+}
+else if ($argc == 2)
+{
+	$cmd = "ls -liart " . $argv[1];
+	$output = shell_exec($cmd);
+	echo $output;
+}
+else
+{
+	usage();
+}
+?>

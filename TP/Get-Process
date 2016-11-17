@@ -1,0 +1,20 @@
+#!/usr/bin/php
+<?php
+//****************************************************************
+//
+//		Autor		: 	BOUDI Ludovic
+//		Date		:	01-11-2016
+//		Description :	portage de la commande PowerShell 
+//						Get-Process pour linux
+//
+//****************************************************************
+
+// La commande "Get-Process" permet de recuperer la liste des
+// processus actif sur votre systeme. Cette commande ne prend 
+// pas de parametre
+
+var $output;
+$output = shell_exec ('ps -aux');
+echo $output;
+
+?>

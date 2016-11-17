@@ -1,0 +1,49 @@
+#!/usr/bin/php
+<?php
+//**************************************************************************
+//			Autor 		: BOUDI Ludovic
+//			Date		: 09-11-2016
+//			Description	: generer un fichier de conf reseau
+//**************************************************************************
+
+// variables de la conf
+var $device;
+var $adresse;
+var $masque;
+var $gateway;
+var $dns;
+var $domaine;
+// variables de traitement
+var $content;
+var $file;
+var $pointeur;
+
+echo "Veuillez saisir le nom de l'interface reseau :\n";
+$device = trim(fgets(STDIN));
+echo "Veuillez saisir l'adresse IP de l'interface :\n";
+$adresse = trim(fgets(STDIN));
+echo "Veuillez saisir le masque reseau :\n";
+$masque = trim(fgets(STDIN));
+echo "Veuillez saisir votre passerelle par defaut :\n";
+$gateway = trim(fgets(STDIN));
+echo "Veuillez saisir l'adresse de votre DNS :\n";
+$dns = trim(fgets(STDIN));
+echo "Veuillez saisir votre domaine d'appartenance :\n";
+$domaine = trim(fgets(STDIN));
+
+$file = "/etc/sysconfig/network-scripts/ifcfg-" . $device;
+$content = "DEVICE=\"" . $device . "\"\n";
+$content .= "NAME=\"" . $device . "\"\n";
+$content .= "TYPE=Ethernet \n ";
+$content .= "ONBOOT=yes \n ";
+$content .= "IPADDR=" . $adresse . "\n";
+$content .= "PREFIX=" . $masque . "\n";
+$content .= "GATEWAY=" . $gateway . "\n";
+$content .= "DNS1=" . $dns . "\n";
+$content .= "DOMAIN=" . $domaine . "\n";
+$content .= "DEFROUTE=yes \n ";
+
+$pointeur = fopen($file, "r+");
+fputs($pointeur,$content);
+fclose($pointeur);
+?>
