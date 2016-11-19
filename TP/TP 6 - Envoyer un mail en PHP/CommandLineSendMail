@@ -6,20 +6,30 @@
 //			Description	: envoyer un mail en PHP depuis la ligne de commande
 //**************************************************************************
 
+// lecture saisie clavier
+function ReadStdIn()
+{
+        $fr=fopen("php://stdin","r"); 
+        $input = fgets($fr,128);  
+        $input = rtrim($input); 
+        fclose ($fr); 
+        return $input;
+}
+
 var $Destinataire;
 var $Sujet;
 var $Message;
 var $Emetteur;
 
 echo "Veuillez saisir votre adresse mail :\n";
-$Emetteur = trim(fgets(STDIN));
+$Emetteur = ReadStdIn();
 $Emetteur = "From : " . $Emetteur . "\r\n";
 echo "Veuillez saisir l adresse mail de votre destinataire:\n";
-$Destinataire = trim(fgets(STDIN));
+$Destinataire = ReadStdIn();
 echo "Veuillez saisir le sujet de votre mail :\n";
-$Sujet == trim(fgets(STDIN));
+$Sujet == ReadStdIn();
 echo "Veuillez saisir le message de votre mail :\n";
-$Message = trim(fgets(STDIN));
+$Message = ReadStdIn();
 // ci dessous la mise en forme du message
 // car celui ci ne peut contenir plus de 
 // 70 caractere sans saut de ligne

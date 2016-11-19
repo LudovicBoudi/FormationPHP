@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php
+//**************************************************************************
+//			Autor 		: BOUDI Ludovic
+//			Date		: 09-11-2016
+//			Description	: Hello World MyName
+//**************************************************************************
+
+function ReadStdIn()
+{
+        $fr=fopen("php://stdin","r"); 
+        $input = fgets($fr,128);  
+        $input = rtrim($input); 
+        fclose ($fr); 
+        return $input;
+}
+
+$MyName = ReadStdIn();
+
+echo "Hello World, I'm " . $MyName . " !!! \n";
+?>
