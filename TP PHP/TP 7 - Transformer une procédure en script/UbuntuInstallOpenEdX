@@ -17,7 +17,7 @@ function SeekAndReplace($Search,$Replace,$File)
 	file_put_contents($File,$content);
 }
 
-var $output;
+$output;
 
 $output=shell_exec('apt-get update -y');
 echo $output;

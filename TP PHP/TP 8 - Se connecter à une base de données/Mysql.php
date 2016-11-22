@@ -14,9 +14,9 @@ $Mabase = "mabasededonnee";
 $Requete = "marequete";
 
 // declaration des variables de traitement
-var $Link;
-var $Result;
-var $Enregistrement;
+$Link;
+$Result;
+$Enregistrement;
 // se connecter a la base de donnees
 $Link = mysqli_connect($Server, $Login, $Password,$Mabase);
 // executer une requete sur la base

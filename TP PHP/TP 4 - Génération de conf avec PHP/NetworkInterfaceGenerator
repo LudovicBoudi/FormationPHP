@@ -7,16 +7,16 @@
 //**************************************************************************
 
 // variables de la conf
-var $device;
-var $adresse;
-var $masque;
-var $gateway;
-var $dns;
-var $domaine;
+$device;
+$adresse;
+$masque;
+$gateway;
+$dns;
+$domaine;
 // variables de traitement
-var $content;
-var $file;
-var $pointeur;
+$content;
+$file;
+$pointeur;
 
 echo "Veuillez saisir le nom de l'interface reseau :\n";
 $device = trim(fgets(STDIN));

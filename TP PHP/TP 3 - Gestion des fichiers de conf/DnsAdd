@@ -19,8 +19,8 @@ function AddDNStoHosts($Addr, $Host)
 }
 
 $DNS=array();
-var $IP;
-var $Name;
+$IP;
+$Name;
 include '/etc/DnsAdd.conf';
 
 foreach ($DNS as &$element)

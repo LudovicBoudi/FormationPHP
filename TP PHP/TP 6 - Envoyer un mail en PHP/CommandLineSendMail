@@ -16,10 +16,10 @@ function ReadStdIn()
         return $input;
 }
 
-var $Destinataire;
-var $Sujet;
-var $Message;
-var $Emetteur;
+$Destinataire;
+$Sujet;
+$Message;
+$Emetteur;
 
 echo "Veuillez saisir votre adresse mail :\n";
 $Emetteur = ReadStdIn();
