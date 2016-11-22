@@ -14,7 +14,7 @@ function ReadStdIn()
         fclose ($fr); 
         return $input;
 }
-
+echo "Quel est votre nom : \n";
 $MyName = ReadStdIn();
 
 echo "Hello World, I'm " . $MyName . " !!! \n";
