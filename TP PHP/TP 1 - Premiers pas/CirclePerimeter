@@ -1,0 +1,25 @@
+#!/usr/bin/php
+<?php
+// reprise de l'exercice 2 du C => determiner le perimetre d'un cercle a partir de son rayon
+
+function ReadStdIn()
+{
+        $fr=fopen("php://stdin","r"); 
+        $input = fgets($fr,128);  
+        $input = rtrim($input); 
+        fclose ($fr); 
+        return $input;
+}
+
+define ('PI', '3.1415');
+$rayon;
+$perimetre;
+$msg_result;
+echo "Rayon = ";
+$rayon=ReadStdIn();
+$perimetre = 2 * PI * $rayon;
+$msg_result= "Le perimetre est de : " . $perimetre . "\n";
+echo $msg_result;
+
+
+?>
