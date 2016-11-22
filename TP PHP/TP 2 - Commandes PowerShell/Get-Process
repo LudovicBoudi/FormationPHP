@@ -13,7 +13,7 @@
 // processus actif sur votre systeme. Cette commande ne prend 
 // pas de parametre
 
-var $output;
+$output;
 $output = shell_exec ('ps -aux');
 echo $output;
 

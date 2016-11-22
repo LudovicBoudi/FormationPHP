@@ -12,8 +12,8 @@
 // La commande "Get-Service" permet de recuperer la liste des
 // services actif sur votre systeme. 
 
-var $output;
-var $cmd;
+$output;
+$cmd;
 
 if ($argc == 1)
 {

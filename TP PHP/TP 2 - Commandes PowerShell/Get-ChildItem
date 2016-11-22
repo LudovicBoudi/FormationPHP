@@ -20,11 +20,11 @@ function usage()
 	echo "La commande Get-ChildItem affiche le contenu d'un repertoire. \n";
 	echo "\t - si elle est passee sans parametre, elle affiche le contenu du repertoire courant \n";
 	echo "\t - sinon elle affiche le contenu du chemin passé en parametre \n";
-	echo "Note : cette commande ne peut prendre qu'un seul parametre !!! \n"
+	echo "Note : cette commande ne peut prendre qu'un seul parametre !!! \n";
 }
 
-var $output;
-var $cmd;
+$output;
+$cmd;
 
 // debut du script
 if ($argc == 1)

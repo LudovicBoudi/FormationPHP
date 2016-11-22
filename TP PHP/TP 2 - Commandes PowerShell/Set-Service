@@ -27,8 +27,8 @@ function usage()
 // beaucoup plus complete que celle de windows car il y aurait en plus les options
 // de load et relaod de service
 
-var $state;
-var $cmd;
+$state;
+$cmd;
 
 
 // control saisie utilisateur
