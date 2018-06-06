@@ -7,7 +7,7 @@ function RecurseCopy($src,$dst)
     while(false !== ( $file = readdir($dir)) ) { 
         if (( $file != '.' ) && ( $file != '..' )) { 
             if ( is_dir($src . '/' . $file) ) { 
-                recurse_copy($src . '/' . $file,$dst . '/' . $file); 
+                RecurseCopy($src . '/' . $file,$dst . '/' . $file); 
             } 
             else { 
                 copy($src . '/' . $file,$dst . '/' . $file); 
@@ -34,7 +34,7 @@ function SeeckAndReplace($Search,$Replace,$fichier)
 // generation de log sous unix
 function put_log ($LogFile,$LogMessage)
 {
-	// Définit le fuseau horaire par défaut à utiliser
+	// DÃ©finit le fuseau horaire par dÃ©faut Ã  utiliser
 	date_default_timezone_set('UTC');
 	$current_date = date("Y-m-d H:i:s"); 
 	$cmd = 'echo \"[' .$current_date. '] Restore Log : ' . $LogMessage . ' \" >> ' . $LogFile ;
@@ -43,7 +43,7 @@ function put_log ($LogFile,$LogMessage)
 // recuperation de la date courante
 function get_date ()
 {
-// Définit le fuseau horaire par défaut à utiliser
+// DÃ©finit le fuseau horaire par dÃ©faut Ã  utiliser
 	date_default_timezone_set('UTC');
 	$current_date = date("Y-m-d H:i:s"); 
 	return $current_date;
